@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 @font-face {
   font-family: "galano_grotesqueregular";
   src: url("../fonts/GalanoGrotesque-Regular-webfont.woff") format("woff"), url("../fonts/GalanoGrotesque-Regular-webfont.otf") format("opentype"), url("../fonts/GalanoGrotesque-Regular-webfont.eot") format("embedded-opentype"); }
@@ -12,12 +13,9 @@
 
 html body {
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; }
-
-html body {
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-family: galano_grotesqueregular; }
+  font-family: galano_grotesqueregular;
+  overflow-x: hidden; }
   html body header {
     padding-top: 50px; }
     html body header nav {
@@ -46,9 +44,41 @@ html body {
           height: 100%; }
           html body header .mobile-nav .frame .logo img {
             height: 100%; }
+        html body header .mobile-nav .frame .hamburger {
+          color: black; }
+          html body header .mobile-nav .frame .hamburger:visited {
+            color: black; }
       @media screen and (min-width: 992px) {
         html body header .mobile-nav {
           display: none; } }
+    html body header .mobile-menu {
+      position: fixed;
+      z-index: 1240;
+      width: 300px;
+      height: 100vh;
+      background-color: white;
+      font-size: 18px;
+      padding: 48px 32px;
+      transform: translateX(100%);
+      top: 0;
+      right: 0;
+      transition: all 0.3s ease; }
+      html body header .mobile-menu .close-btn {
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        left: 10px; }
+        html body header .mobile-menu .close-btn:visited {
+          color: #39358c; }
+      html body header .mobile-menu ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #eeeae6; }
+        html body header .mobile-menu ul li a, html body header .mobile-menu ul li a:visited {
+          color: black; }
+    html body header .menu-show {
+      transition: all 0.3s ease;
+      transform: translateX(0);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); }
     html body header .desktop-nav {
       display: none;
       height: 70px;
@@ -68,7 +98,8 @@ html body {
           width: calc(50% - 110px); }
           html body header .desktop-nav .frame .nav-left ul, html body header .desktop-nav .frame .nav-right ul {
             display: flex;
-            justify-content: space-between; }
+            justify-content: space-between;
+            align-items: center; }
             html body header .desktop-nav .frame .nav-left ul li, html body header .desktop-nav .frame .nav-right ul li {
               padding: 5px;
               text-align: center; }
@@ -76,28 +107,39 @@ html body {
                 color: black; }
                 html body header .desktop-nav .frame .nav-left ul li a:hover, html body header .desktop-nav .frame .nav-right ul li a:hover {
                   color: #2ca88c; }
+            html body header .desktop-nav .frame .nav-left ul .select, html body header .desktop-nav .frame .nav-right ul .select {
+              font-family: "galano_grotesquesemibold";
+              color: #2ca88c; }
       @media screen and (min-width: 992px) {
         html body header .desktop-nav {
           display: block; } }
     @media screen and (min-width: 992px) {
       html body header {
         padding-top: 70px; } }
+  html body footer {
+    background-color: #2ca88c;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 14px;
+    padding: 10px 0; }
+html .overflow {
+  overflow: hidden; }
 
-html body .banner {
+html body#page-home .banner {
   position: relative; }
-  html body .banner .mobile-banner {
+  html body#page-home .banner .mobile-banner {
     width: 100%; }
     @media screen and (min-width: 768px) {
-      html body .banner .mobile-banner {
+      html body#page-home .banner .mobile-banner {
         display: none; } }
-  html body .banner .desktop-banner {
+  html body#page-home .banner .desktop-banner {
     width: 100%;
     display: none;
     margin-top: 20px; }
     @media screen and (min-width: 768px) {
-      html body .banner .desktop-banner {
+      html body#page-home .banner .desktop-banner {
         display: block; } }
-  html body .banner p.slogan {
+  html body#page-home .banner p.slogan {
     font-size: 18px;
     color: #39358c;
     font-family: "galano_grotesquesemibold";
@@ -105,7 +147,7 @@ html body .banner {
     margin: auto;
     margin-top: 10px; }
     @media screen and (min-width: 768px) {
-      html body .banner p.slogan {
+      html body#page-home .banner p.slogan {
         width: auto;
         position: absolute;
         font-size: 1.9vw;
@@ -113,55 +155,62 @@ html body .banner {
         top: 50vw;
         line-height: 2em; } }
 @media screen and (min-width: 768px) and (min-width: 1200px) and (min-width: 1500px) {
-  html body .banner p.slogan {
+  html body#page-home .banner p.slogan {
     font-size: 25px;
     left: 23vw;
     top: 47vw; } }
 
-html body .mobile-program .frame {
+html body#page-home .mobile-program .frame {
   width: 90%;
   margin: auto;
   text-align: center; }
-  html body .mobile-program .frame .seperator {
+  html body#page-home .mobile-program .frame .seperator {
     display: block;
-    margin: auto;
     width: 40px;
-    margin-top: 20px; }
-  html body .mobile-program .frame .title {
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html body#page-home .mobile-program .frame .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+  html body#page-home .mobile-program .frame .title {
     font-family: "galano_grotesquesemibold";
     color: #90684b;
     font-size: 36px;
     margin: 36px 0;
     margin: 0; }
-  html body .mobile-program .frame .video-wrap {
+  html body#page-home .mobile-program .frame .video-wrap {
     margin-top: 20px; }
-  html body .mobile-program .frame .button {
+  html body#page-home .mobile-program .frame .button {
     background-color: #39358c;
     color: white;
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px; }
 @media screen and (min-width: 992px) {
-  html body .mobile-program {
+  html body#page-home .mobile-program {
     display: none; } }
-html body .program {
+html body#page-home .program {
   display: none;
   text-align: center; }
-  html body .program .seperator {
-    width: 67px;
+  html body#page-home .program .seperator {
     display: block;
-    margin: auto; }
-  html body .program .title {
+    width: 40px;
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html body#page-home .program .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+  html body#page-home .program .title {
     font-family: "galano_grotesquesemibold";
     color: #90684b;
     font-size: 36px;
     margin: 36px 0; }
-  html body .program .video-wrap {
+  html body#page-home .program .video-wrap {
     width: 578px;
     height: 325px;
     margin: auto;
     position: relative; }
-    html body .program .video-wrap .deco-right {
+    html body#page-home .program .video-wrap .deco-right {
       position: absolute;
       right: -8vw;
       top: 0;
@@ -171,14 +220,14 @@ html body .program {
       background-repeat-x: repeat;
       width: 8vw;
       height: 100%; }
-    html body .program .video-wrap .deco-lb {
+    html body#page-home .program .video-wrap .deco-lb {
       width: 128px;
       position: absolute;
       left: 0;
       bottom: 0;
       transform: translateX(-100%);
       z-index: 1; }
-    html body .program .video-wrap .deco-left {
+    html body#page-home .program .video-wrap .deco-left {
       height: 311px;
       border: 1px solid #2ca88c;
       width: calc(50vw - 289px - 128px);
@@ -190,38 +239,1166 @@ html body .program {
       background-repeat-x: repeat;
       top: -90px;
       z-index: 0; }
-    html body .program .video-wrap .button {
-      background-color: #39358c;
-      color: white;
-      width: 185px;
-      display: block;
-      margin: auto;
-      height: 50px;
-      line-height: 50px;
-      font-size: 24px;
-      margin-top: 30px;
-      margin-bottom: 55px;
-      transition: all 0.2s ease; }
-      html body .program .video-wrap .button:hover {
-        transform: scale(1.05); }
-  @media screen and (min-width: 992px) {
-    html body .program {
-      display: block; } }
-html body .ticket .frame {
-  width: 90%;
-  margin: auto; }
-  html body .ticket .frame .seperator {
-    width: 67px;
+  html body#page-home .program .button {
+    background-color: #39358c;
+    color: white;
+    width: 175px;
     display: block;
     margin: auto;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    margin-top: 30px;
+    transition: all 0.2s ease; }
+    html body#page-home .program .button:hover {
+      transform: scale(1.05); }
+  @media screen and (min-width: 992px) {
+    html body#page-home .program {
+      display: block; } }
+html body#page-home .ticket .seperator {
+  display: block;
+  width: 40px;
+  margin: 20px auto; }
+  @media screen and (min-width: 992px) {
+    html body#page-home .ticket .seperator {
+      width: 67px;
+      margin: 36px auto; } }
+html body#page-home .ticket .frame {
+  width: 90%;
+  margin: auto; }
+  html body#page-home .ticket .frame .content-wrap {
+    border: 1px solid #2ca88c;
+    padding: 50px 0 33px 0;
+    width: 100%;
+    max-width: 705px;
+    background-color: white;
+    margin: auto; }
+    html body#page-home .ticket .frame .content-wrap .title {
+      font-family: "galano_grotesquesemibold";
+      color: #90684b;
+      font-size: 36px;
+      margin: 36px 0;
+      text-align: center;
+      margin: 0; }
+    html body#page-home .ticket .frame .content-wrap .decription {
+      color: #39358c;
+      font-size: 24px;
+      text-align: center;
+      margin: 25px 0 36px 0; }
+    html body#page-home .ticket .frame .content-wrap .button {
+      display: block;
+      border: 1px solid #39358c;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 46px;
+      margin: auto;
+      transition: all 0.2s ease; }
+      html body#page-home .ticket .frame .content-wrap .button:visited {
+        color: #39358c; }
+      html body#page-home .ticket .frame .content-wrap .button:hover {
+        background-color: #39358c;
+        color: white; }
+      html body#page-home .ticket .frame .content-wrap .button i {
+        font-size: 22px; }
+    @media screen and (min-width: 992px) {
+      html body#page-home .ticket .frame .content-wrap {
+        height: 245px; } }
+  @media screen and (min-width: 992px) {
+    html body#page-home .ticket .frame {
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../image/deco_ticket.png);
+      background-size: cover;
+      background-repeat-x: repeat;
+      border: 1px solid #2ca88c; } }
+html body#page-home .mobile-event .seperator {
+  display: block;
+  width: 40px;
+  margin: 20px auto; }
+  @media screen and (min-width: 992px) {
+    html body#page-home .mobile-event .seperator {
+      width: 67px;
+      margin: 36px auto; } }
+html body#page-home .mobile-event .frame {
+  width: 90%;
+  margin: auto; }
+  html body#page-home .mobile-event .frame .content-wrap {
+    border: 1px solid #2ca88c;
+    padding: 50px 10px 33px 10px;
+    width: 100%;
+    max-width: 705px;
+    background-color: white;
+    margin: auto;
+    position: relative; }
+    html body#page-home .mobile-event .frame .content-wrap .title {
+      font-family: "galano_grotesquesemibold";
+      color: #90684b;
+      font-size: 36px;
+      margin: 36px 0;
+      text-align: center;
+      margin: 0; }
+    html body#page-home .mobile-event .frame .content-wrap .decription {
+      color: #39358c;
+      font-size: 24px;
+      text-align: center;
+      margin: 25px 0 36px 0;
+      line-height: 1.3em; }
+    html body#page-home .mobile-event .frame .content-wrap .button {
+      display: block;
+      border: 1px solid #39358c;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 46px;
+      margin: auto;
+      transition: all 0.2s ease; }
+      html body#page-home .mobile-event .frame .content-wrap .button:visited {
+        color: #39358c; }
+      html body#page-home .mobile-event .frame .content-wrap .button:hover {
+        background-color: #39358c;
+        color: white; }
+      html body#page-home .mobile-event .frame .content-wrap .button i {
+        font-size: 22px; }
+    html body#page-home .mobile-event .frame .content-wrap .fb-link {
+      font-family: "galano_grotesquesemibold";
+      color: #39358c;
+      text-align: center;
+      display: block;
+      width: 190px;
+      margin: auto;
+      margin-top: 20px; }
+      html body#page-home .mobile-event .frame .content-wrap .fb-link i {
+        margin-right: 10px;
+        border: 2px solid #39358c;
+        padding: 3px 6px; }
+      html body#page-home .mobile-event .frame .content-wrap .fb-link:hover {
+        color: #48f4cc; }
+        html body#page-home .mobile-event .frame .content-wrap .fb-link:hover i {
+          border: 2px solid #48f4cc; }
+    @media screen and (min-width: 992px) {
+      html body#page-home .mobile-event .frame .content-wrap {
+        height: 323px; } }
+@media screen and (min-width: 1050px) {
+  html body#page-home .mobile-event {
+    display: none; } }
+html body#page-home .event {
+  display: none; }
+  html body#page-home .event .seperator {
+    display: block;
     width: 40px;
-    margin-top: 20px; }
-  html body .ticket .frame .content-wrap .title {
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html body#page-home .event .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+    @media screen and (min-width: 992px) {
+      html body#page-home .event .seperator {
+        margin: 45px auto; } }
+  html body#page-home .event .frame {
+    width: 90%;
+    margin: auto;
+    height: 738px;
+    background-image: url(../image/deco_event.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative; }
+    html body#page-home .event .frame .content-wrap {
+      width: 625px;
+      height: 265px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      padding: 47px;
+      position: relative; }
+      html body#page-home .event .frame .content-wrap .title {
+        font-family: "galano_grotesquesemibold";
+        color: #90684b;
+        font-size: 36px;
+        margin: 36px 0;
+        text-align: center;
+        margin: 0; }
+      html body#page-home .event .frame .content-wrap .decription {
+        color: #39358c;
+        font-size: 24px;
+        text-align: center;
+        margin: 25px 0 36px 0;
+        line-height: 1.3em; }
+      html body#page-home .event .frame .content-wrap .button {
+        display: block;
+        border: 1px solid #39358c;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 46px;
+        margin: auto;
+        transition: all 0.2s ease; }
+        html body#page-home .event .frame .content-wrap .button:visited {
+          color: #39358c; }
+        html body#page-home .event .frame .content-wrap .button:hover {
+          background-color: #39358c;
+          color: white; }
+        html body#page-home .event .frame .content-wrap .button i {
+          font-size: 22px; }
+      html body#page-home .event .frame .content-wrap .fb-link {
+        font-family: "galano_grotesquesemibold";
+        color: #39358c;
+        text-align: center;
+        display: block;
+        z-index: 20;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -44px;
+        color: #48f4cc; }
+        html body#page-home .event .frame .content-wrap .fb-link i {
+          margin-right: 10px;
+          border: 2px solid #48f4cc;
+          padding: 3px 6px; }
+        html body#page-home .event .frame .content-wrap .fb-link:hover {
+          color: white; }
+          html body#page-home .event .frame .content-wrap .fb-link:hover i {
+            border: 2px solid white; }
+    html body#page-home .event .frame .deco-right {
+      width: calc(95vw - 941px);
+      border: 1px solid #2ca88c;
+      position: absolute;
+      left: 926px;
+      top: 148px;
+      height: 267px;
+      background-image: url(../image/deco_event_right.png);
+      background-size: auto 100%;
+      background-repeat: repeat-x; }
+    html body#page-home .event .frame .deco-left {
+      background-image: url(../image/deco_event_left.png);
+      position: absolute;
+      bottom: 0;
+      left: -5vw;
+      width: calc(5vw + 406px);
+      height: 263px;
+      background-size: auto 100%;
+      background-repeat: repeat-x;
+      border: 1px solid #2ca88c; }
+  @media screen and (min-width: 1050px) {
+    html body#page-home .event {
+      display: block; } }
+html body#page-home .sponsor {
+  padding: 40px 0;
+  position: relative; }
+  html body#page-home .sponsor .cat {
+    margin-top: 45px; }
+    html body#page-home .sponsor .cat .title {
+      color: #90684b;
+      font-family: "galano_grotesquesemibold";
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 1px; }
+    html body#page-home .sponsor .cat .logo-wrap {
+      width: 100%;
+      margin-top: 20px; }
+      html body#page-home .sponsor .cat .logo-wrap .logo {
+        display: block;
+        margin: auto;
+        padding: 20px 0; }
+        @media screen and (min-width: 768px) {
+          html body#page-home .sponsor .cat .logo-wrap .logo {
+            margin: 0 20px;
+            align-self: center; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html body#page-home .sponsor .cat .logo-wrap .logo {
+      margin: 0 40px; } }
+
+      @media screen and (min-width: 768px) {
+        html body#page-home .sponsor .cat .logo-wrap {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap; } }
+  @media screen and (min-width: 1050px) {
+    html body#page-home .sponsor .organized {
+      position: absolute;
+      left: calc(50% + 200px);
+      top: -190px; } }
+html body#page-about {
+  position: relative; }
+  html body#page-about .title {
+    padding: 40px 0;
+    position: relative;
+    z-index: 1; }
+    html body#page-about .title .frame {
+      width: 90%;
+      margin: auto; }
+      html body#page-about .title .frame h1 {
+        font-family: "galano_grotesquesemibold";
+        color: #90684b;
+        text-align: center;
+        font-size: 28px; }
+        @media screen and (min-width: 992px) {
+          html body#page-about .title .frame h1 {
+            font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html body#page-about .title .frame h1 {
+      font-size: 48px; } }
+
+        @media screen and (min-width: 1400px) {
+          html body#page-about .title .frame h1 {
+            font-size: 52px; } }
+      @media screen and (min-width: 768px) {
+        html body#page-about .title .frame {
+          width: fit-content;
+          margin: calc(75px + 1vw) 0 0 25%; } }
+  @media screen and (min-width: 768px) and (min-width: 1400px) {
+    html body#page-about .title .frame {
+      margin-top: 115px;
+      margin-left: calc(50% - 345px); } }
+
+    @media screen and (min-width: 768px) {
+      html body#page-about .title {
+        padding: 0; } }
+  html body#page-about .seperator {
+    border: 1px solid #2ca88c;
+    width: 100%;
+    height: 50px;
+    background-image: url(../image/deco_event_left.png);
+    background-size: 120% auto; }
+    @media screen and (min-width: 768px) {
+      html body#page-about .seperator {
+        display: none; } }
+  html body#page-about .decoration {
+    display: none;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 75px;
+    max-width: 1400px; }
+    html body#page-about .decoration img {
+      width: 100%; }
+    @media screen and (min-width: 768px) {
+      html body#page-about .decoration {
+        display: block; } }
+  @media screen and (min-width: 768px) and (min-width: 1400px) {
+    html body#page-about .decoration {
+      left: 50%;
+      transform: translateX(-50%); } }
+
+  html body#page-about .content {
+    padding: 20px 0;
+    position: relative;
+    z-index: 1; }
+    html body#page-about .content .frame {
+      width: 90%;
+      margin: auto;
+      max-width: 780px; }
+      html body#page-about .content .frame p {
+        line-height: 1.5em;
+        position: relative; }
+        html body#page-about .content .frame p span {
+          font-family: "galano_grotesquesemibold"; }
+        html body#page-about .content .frame p:last-child {
+          margin-top: 60px; }
+          html body#page-about .content .frame p:last-child:before {
+            content: '';
+            width: 150px;
+            height: 1px;
+            background-color: #2ca88c;
+            position: absolute;
+            left: 50%;
+            top: -30px;
+            transform: translateX(-50%); }
+      @media screen and (min-width: 768px) {
+        html body#page-about .content .frame {
+          width: 100%;
+          margin: 0; } }
+    @media screen and (min-width: 768px) {
+      html body#page-about .content {
+        margin-top: 27%;
+        margin-left: 25%;
+        padding-right: 5%;
+        padding-bottom: 27vh; } }
+  @media screen and (min-width: 768px) and (min-width: 1400px) {
+    html body#page-about .content {
+      margin-top: 380px;
+      margin-left: calc(50% - 347px); } }
+
+  html body#page-about footer {
+    margin-top: 50px; }
+html body#page-program section.title {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%; }
+  html body#page-program section.title h1 {
     font-family: "galano_grotesquesemibold";
     color: #90684b;
-    font-size: 36px;
-    margin: 36px 0;
     text-align: center;
-    margin: 0; }
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html body#page-program section.title h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html body#page-program section.title h1 {
+      font-size: 48px; } }
+
+  @media screen and (min-width: 992px) {
+    html body#page-program section.title {
+      height: 200px; } }
+html body#page-program section.cat {
+  margin-top: 20px; }
+  html body#page-program section.cat:nth-child(3) {
+    margin-top: -10px; }
+    @media screen and (min-width: 992px) {
+      html body#page-program section.cat:nth-child(3) {
+        margin-top: -60px; } }
+  html body#page-program section.cat-jiang-hu .ticket, html body#page-program section.cat-queer .ticket {
+    justify-content: flex-end; }
+  html body#page-program section.cat-bear .ticket {
+    justify-content: center; }
+  html body#page-program section.cat .frame {
+    width: 90%;
+    margin: auto;
+    max-width: 1168px; }
+    html body#page-program section.cat .frame .seperator {
+      display: block;
+      width: 40px;
+      margin: 20px auto;
+      margin-top: 0; }
+      @media screen and (min-width: 992px) {
+        html body#page-program section.cat .frame .seperator {
+          width: 67px;
+          margin: 36px auto; } }
+    html body#page-program section.cat .frame .cat-name {
+      font-family: "futura_meduim";
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400; }
+      @media screen and (min-width: 992px) {
+        html body#page-program section.cat .frame .cat-name {
+          font-size: 28px; } }
+    html body#page-program section.cat .frame .cat-intro {
+      max-width: 900px;
+      margin: auto;
+      margin-top: 20px; }
+      html body#page-program section.cat .frame .cat-intro span {
+        font-style: italic; }
+    html body#page-program section.cat .frame .ticket {
+      border: 1px solid #2ca88c;
+      width: 100%;
+      margin-top: 20px; }
+      html body#page-program section.cat .frame .ticket .film-img {
+        width: 100%;
+        height: 55vw;
+        background-size: cover;
+        background-position: center; }
+        html body#page-program section.cat .frame .ticket .film-img-ice {
+          background-image: url(../image/movie/ice.png); }
+        html body#page-program section.cat .frame .ticket .film-img-jade {
+          background-image: url(../image/movie/jade.png); }
+        html body#page-program section.cat .frame .ticket .film-img-gang {
+          background-image: url(../image/movie/gang.png); }
+        html body#page-program section.cat .frame .ticket .film-img-vengeance {
+          background-image: url(../image/movie/vengeance.png); }
+        html body#page-program section.cat .frame .ticket .film-img-b-movie {
+          background-image: url(../image/movie/b-movie.png); }
+        html body#page-program section.cat .frame .ticket .film-img-never {
+          background-color: #d0ccc8;
+          color: gray;
+          font-size: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          html body#page-program section.cat .frame .ticket .film-img-never i {
+            margin-right: 10px; }
+        html body#page-program section.cat .frame .ticket .film-img-talk {
+          background-image: url(../image/movie/talk.png); }
+        html body#page-program section.cat .frame .ticket .film-img-taipeilove {
+          background-image: url(../image/movie/taipeilove.png); }
+        html body#page-program section.cat .frame .ticket .film-img-bb {
+          background-image: url(../image/movie/bb.png); }
+        @media screen and (min-width: 768px) {
+          html body#page-program section.cat .frame .ticket .film-img {
+            width: 50%;
+            height: 320px; } }
+  @media screen and (min-width: 768px) and (min-width: 768px) {
+    html body#page-program section.cat .frame .ticket .film-img {
+      max-width: 473px; } }
+
+      html body#page-program section.cat .frame .ticket .film-info {
+        padding: 10px;
+        background-color: white; }
+        html body#page-program section.cat .frame .ticket .film-info .film-name {
+          font-size: 18px; }
+          html body#page-program section.cat .frame .ticket .film-info .film-name-en {
+            font-family: Helvetica;
+            font-weight: 900; }
+          html body#page-program section.cat .frame .ticket .film-info .film-name-ch {
+            font-family: "Noto Sans TC", sans-serif;
+            margin-top: 5px; }
+            @media screen and (min-width: 768px) {
+              html body#page-program section.cat .frame .ticket .film-info .film-name-ch {
+                margin-top: 10px; } }
+        html body#page-program section.cat .frame .ticket .film-info .film-brief {
+          margin-top: 15px;
+          font-size: 16px;
+          font-family: Helvetica;
+          font-weight: 400;
+          color: gray; }
+        html body#page-program section.cat .frame .ticket .film-info .film-tag {
+          margin-top: 15px;
+          font-size: 16px;
+          font-family: Helvetica;
+          font-weight: 400;
+          color: #2ca88c; }
+        html body#page-program section.cat .frame .ticket .film-info .button-wrap {
+          margin-top: 20px; }
+          html body#page-program section.cat .frame .ticket .film-info .button-wrap .button {
+            border: 1px solid black;
+            padding: 5px 15px;
+            display: inline-block;
+            color: black;
+            transition: all 0.2s ease; }
+            html body#page-program section.cat .frame .ticket .film-info .button-wrap .button:hover, html body#page-program section.cat .frame .ticket .film-info .button-wrap .button:active {
+              background-color: black;
+              color: white; }
+            html body#page-program section.cat .frame .ticket .film-info .button-wrap .button:focus {
+              background-color: white;
+              color: black; }
+          @media screen and (min-width: 992px) {
+            html body#page-program section.cat .frame .ticket .film-info .button-wrap {
+              margin-top: 40px; } }
+        @media screen and (min-width: 768px) {
+          html body#page-program section.cat .frame .ticket .film-info {
+            width: 50%;
+            padding: 30px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html body#page-program section.cat .frame .ticket .film-info {
+      max-width: 485px;
+      height: 320px;
+      border-right: 1px solid #2ca88c;
+      display: flex;
+      flex-flow: column;
+      justify-content: center; } }
+
+      @media screen and (min-width: 768px) {
+        html body#page-program section.cat .frame .ticket {
+          display: flex;
+          align-items: center; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html body#page-program section.cat .frame .ticket {
+      background-image: url(../image/deco_program.png);
+      background-size: contain;
+      background-repeat: repeat-x;
+      margin-top: 60px; } }
+
+  @media screen and (min-width: 992px) {
+    html body#page-program section.cat {
+      margin-top: 70px; }
+      html body#page-program section.cat-jiang-hu .frame .ticket .film-info, html body#page-program section.cat-queer .frame .ticket .film-info {
+        border: 0; } }
+html body#page-program .popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1235;
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  html body#page-program .popup .window {
+    width: calc(100% - 10vw);
+    max-height: calc(100% - 10vw);
+    max-width: 920px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    html body#page-program .popup .window .header {
+      font-size: 22px;
+      padding-right: 10px;
+      text-align: right;
+      flex: none; }
+      html body#page-program .popup .window .header button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        outline: none;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer; }
+        html body#page-program .popup .window .header button i {
+          font-size: 20px; }
+        html body#page-program .popup .window .header button:hover {
+          color: gray; }
+    html body#page-program .popup .window .content {
+      height: 100%;
+      padding: 20px;
+      padding-top: 0;
+      flex: 1;
+      overflow-y: scroll; }
+      html body#page-program .popup .window .content .content-wrap .text .film-name {
+        font-size: 24px; }
+        html body#page-program .popup .window .content .content-wrap .text .film-name-en {
+          font-family: Helvetica;
+          font-weight: 900; }
+        html body#page-program .popup .window .content .content-wrap .text .film-name-ch {
+          font-family: "Noto Sans TC", sans-serif;
+          margin-top: 5px; }
+          @media screen and (min-width: 768px) {
+            html body#page-program .popup .window .content .content-wrap .text .film-name-ch {
+              margin-top: 10px; } }
+      html body#page-program .popup .window .content .content-wrap .text .film-brief {
+        margin-top: 15px;
+        font-size: 16px;
+        font-family: Helvetica;
+        font-weight: 400;
+        color: gray; }
+      html body#page-program .popup .window .content .content-wrap .text .film-tag {
+        margin-top: 15px;
+        font-size: 16px;
+        font-family: Helvetica;
+        font-weight: 400;
+        color: #2ca88c; }
+      html body#page-program .popup .window .content .content-wrap .text .button {
+        border: 1px solid black;
+        padding: 5px 15px;
+        display: inline-block;
+        color: black;
+        transition: all 0.2s ease;
+        margin-top: 20px; }
+        html body#page-program .popup .window .content .content-wrap .text .button:hover, html body#page-program .popup .window .content .content-wrap .text .button:active {
+          background-color: black;
+          color: white; }
+        html body#page-program .popup .window .content .content-wrap .text .button:focus {
+          background-color: white;
+          color: black; }
+      html body#page-program .popup .window .content .content-wrap .text .intro {
+        margin-top: 10px;
+        padding: 10px;
+        line-height: 1.4em; }
+        html body#page-program .popup .window .content .content-wrap .text .intro p {
+          margin-top: 10px; }
+        html body#page-program .popup .window .content .content-wrap .text .intro span {
+          font-style: italic; }
+      @media screen and (min-width: 992px) {
+        html body#page-program .popup .window .content .content-wrap .text {
+          padding-right: 20px; } }
+html body#page-program footer {
+  margin-top: 100px; }
+  @media screen and (min-width: 768px) {
+    html body#page-program footer {
+      margin-top: 150px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html body#page-program footer {
+      margin-top: 250px; } }
+
+html #page-ticket .title {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px; }
+  html #page-ticket .title h1 {
+    font-family: "galano_grotesquesemibold";
+    color: #90684b;
+    text-align: center;
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html #page-ticket .title h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html #page-ticket .title h1 {
+      font-size: 48px; } }
+
+  @media screen and (min-width: 992px) {
+    html #page-ticket .title {
+      height: 200px; } }
+html #page-ticket .pass .frame {
+  width: 90%;
+  margin: auto;
+  max-width: 990px; }
+  html #page-ticket .pass .frame .sub-title {
+    font-family: "galano_grotesquesemibold";
+    font-size: 18px; }
+    @media screen and (min-width: 768px) {
+      html #page-ticket .pass .frame .sub-title {
+        font-size: 20px; } }
+  html #page-ticket .pass .frame .note {
+    margin-top: 10px; }
+  html #page-ticket .pass .frame ul {
+    padding-left: 25px;
+    margin-top: 20px; }
+    html #page-ticket .pass .frame ul li {
+      list-style: disc;
+      padding: 5px 0; }
+  html #page-ticket .pass .frame .paragraph {
+    margin-top: 20px; }
+  html #page-ticket .pass .frame .note-img {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px; }
+html #page-ticket .faq {
+  margin-top: 50px; }
+  html #page-ticket .faq .frame {
+    width: 90%;
+    margin: auto;
+    max-width: 990px; }
+    html #page-ticket .faq .frame .sub-title {
+      font-family: "galano_grotesquesemibold";
+      font-size: 20px; }
+      @media screen and (min-width: 768px) {
+        html #page-ticket .faq .frame .sub-title {
+          font-size: 24px; } }
+    html #page-ticket .faq .frame .question-wrap {
+      margin-top: 20px; }
+      html #page-ticket .faq .frame .question-wrap .question {
+        border-bottom: 1px solid #2ca88c;
+        padding: 20px 0 20px 30px;
+        position: relative;
+        transition: all 0.2s ease;
+        cursor: pointer; }
+        html #page-ticket .faq .frame .question-wrap .question .ask {
+          font-family: "galano_grotesquesemibold";
+          transition: all 0.2s ease;
+          font-size: 18px; }
+          html #page-ticket .faq .frame .question-wrap .question .ask:before {
+            position: absolute;
+            content: '\f067';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0; }
+        html #page-ticket .faq .frame .question-wrap .question .answer {
+          height: 0;
+          overflow: hidden;
+          transition: all 0.2s ease; }
+        html #page-ticket .faq .frame .question-wrap .question:hover .ask {
+          color: #2ca88c; }
+        html #page-ticket .faq .frame .question-wrap .question--open .ask {
+          color: #2ca88c; }
+          html #page-ticket .faq .frame .question-wrap .question--open .ask:before {
+            content: '\f068'; }
+        html #page-ticket .faq .frame .question-wrap .question--open .answer {
+          height: 80px;
+          margin-top: 10px; }
+          @media screen and (min-width: 575px) {
+            html #page-ticket .faq .frame .question-wrap .question--open .answer {
+              height: 65px;
+              margin-top: 20px; } }
+  @media screen and (min-width: 575px) and (min-width: 808px) {
+    html #page-ticket .faq .frame .question-wrap .question--open .answer {
+      height: 50px; } }
+
+html #page-ticket section.contact {
+  margin-top: 50px; }
+  html #page-ticket section.contact .frame {
+    width: 90%;
+    margin: auto;
+    max-width: 990px; }
+    html #page-ticket section.contact .frame .sub-title {
+      font-family: "galano_grotesquesemibold";
+      font-size: 20px; }
+      @media screen and (min-width: 768px) {
+        html #page-ticket section.contact .frame .sub-title {
+          font-size: 24px; } }
+    html #page-ticket section.contact .frame p {
+      margin-top: 15px; }
+      html #page-ticket section.contact .frame p a {
+        color: #39358c;
+        text-decoration: underline; }
+        html #page-ticket section.contact .frame p a:hover {
+          color: #2ca88c; }
+html #page-ticket footer {
+  margin-top: 150px; }
+html #page-event .title .frame {
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
+  max-width: 1060px; }
+  html #page-event .title .frame h1 {
+    font-family: "galano_grotesquesemibold";
+    color: #90684b;
+    text-align: center;
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html #page-event .title .frame h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html #page-event .title .frame h1 {
+      font-size: 48px; } }
+
+  html #page-event .title .frame p {
+    margin-top: 15px;
+    text-align: center; }
+html #page-event .event-wrap .frame {
+  width: 90%;
+  margin: auto;
+  max-width: 1060px; }
+  html #page-event .event-wrap .frame .event {
+    border-top: 1px solid #2ca88c;
+    padding: 40px 0; }
+    html #page-event .event-wrap .frame .event .date {
+      color: #5b5b5b;
+      font-size: 14px; }
+    html #page-event .event-wrap .frame .event .event-name {
+      font-size: 22px;
+      font-family: "galano_grotesquesemibold";
+      margin: 10px 0; }
+    html #page-event .event-wrap .frame .event .speaker {
+      font-size: 18px;
+      font-family: "galano_grotesquesemibold"; }
+    html #page-event .event-wrap .frame .event .musician {
+      margin-top: 30px;
+      max-width: 850px; }
+      html #page-event .event-wrap .frame .event .musician img {
+        width: 150px; }
+      html #page-event .event-wrap .frame .event .musician .musician-info .name {
+        font-family: "galano_grotesquesemibold";
+        font-size: 18px; }
+      html #page-event .event-wrap .frame .event .musician .musician-info .exp {
+        margin-top: 10px; }
+      @media screen and (min-width: 768px) {
+        html #page-event .event-wrap .frame .event .musician .musician-info {
+          margin-left: 20px; } }
+      @media screen and (min-width: 768px) {
+        html #page-event .event-wrap .frame .event .musician {
+          display: flex;
+          align-items: center; } }
+    html #page-event .event-wrap .frame .event .button {
+      background-color: #39358c;
+      color: white;
+      display: block;
+      width: 220px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      margin-top: 25px; }
+      html #page-event .event-wrap .frame .event .button i {
+        margin-right: 5px; }
+      html #page-event .event-wrap .frame .event .button:hover {
+        background-color: #1877f2; }
+    html #page-event .event-wrap .frame .event .button-disable {
+      color: white;
+      width: 220px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      margin-top: 25px;
+      cursor: not-allowed;
+      background-color: #b8b8b8; }
+      html #page-event .event-wrap .frame .event .button-disable i {
+        margin-right: 5px; }
+    html #page-event .event-wrap .frame .event .content {
+      margin-top: 20px;
+      line-height: 1.4em; }
+html #page-event footer {
+  margin-top: 150px; }
+html #page-team section.title {
+  padding: 40px 0 0 0; }
+  html #page-team section.title h1 {
+    font-family: "galano_grotesquesemibold";
+    color: #90684b;
+    text-align: center;
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html #page-team section.title h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html #page-team section.title h1 {
+      font-size: 48px; } }
+
+html #page-team section.team .frame {
+  width: 90%;
+  margin: auto;
+  max-width: 1090px; }
+  html #page-team section.team .frame .seperator {
+    display: block;
+    width: 40px;
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html #page-team section.team .frame .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+  html #page-team section.team .frame .sub-title {
+    font-family: "futura_meduim";
+    font-weight: 100;
+    text-align: center; }
+  html #page-team section.team .frame .intro {
+    text-align: center;
+    line-height: 1.4em;
+    margin-top: 20px; }
+  html #page-team section.team .frame .member-wrap .member {
+    text-align: center;
+    margin-top: 30px; }
+    html #page-team section.team .frame .member-wrap .member .img {
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      margin-bottom: 15px;
+      background-size: cover; }
+      html #page-team section.team .frame .member-wrap .member .img-jaye {
+        background-image: url(../image/team_jaye.png); }
+      html #page-team section.team .frame .member-wrap .member .img-joyce {
+        background-image: url(../image/team_joyce.png); }
+      html #page-team section.team .frame .member-wrap .member .img-shengta {
+        background-image: url(../image/team_shengta.png); }
+      html #page-team section.team .frame .member-wrap .member .img-charlie {
+        background-image: url(../image/team_charlie.png); }
+      @media screen and (min-width: 992px) {
+        html #page-team section.team .frame .member-wrap .member .img {
+          width: 100%;
+          height: 21vw; } }
+  @media screen and (min-width: 992px) and (min-width: 1200px) {
+    html #page-team section.team .frame .member-wrap .member .img {
+      height: 220px; } }
+
+    html #page-team section.team .frame .member-wrap .member .title {
+      font-family: "galano_grotesquesemibold";
+      color: #90684b;
+      font-size: 18px; }
+    html #page-team section.team .frame .member-wrap .member .name {
+      font-family: "galano_grotesquesemibold";
+      font-size: 22px;
+      margin: 5px 0 13px 0; }
+    html #page-team section.team .frame .member-wrap .member .mail {
+      color: #8b8b8b;
+      text-decoration: underline; }
+      html #page-team section.team .frame .member-wrap .member .mail:hover {
+        color: #39358c; }
+    @media screen and (min-width: 768px) {
+      html #page-team section.team .frame .member-wrap .member {
+        width: 45%;
+        margin-top: 40px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html #page-team section.team .frame .member-wrap .member {
+      width: 23%; } }
+
+  @media screen and (min-width: 768px) and (min-width: 992px) and (min-width: 1200px) {
+    html #page-team section.team .frame .member-wrap .member {
+      width: 220px; } }
+
+  @media screen and (min-width: 768px) {
+    html #page-team section.team .frame .member-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    html #page-team section.team .frame .member-wrap {
+      justify-content: space-between; } }
+
+  html #page-team section.team .frame .sub-member-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px; }
+    html #page-team section.team .frame .sub-member-wrap .sub-member {
+      text-align: center;
+      margin-top: 40px;
+      width: 40%; }
+      html #page-team section.team .frame .sub-member-wrap .sub-member .title {
+        font-family: "galano_grotesquesemibold";
+        color: #90684b;
+        font-size: 18px;
+        margin-top: 20px; }
+      html #page-team section.team .frame .sub-member-wrap .sub-member .name {
+        font-family: "galano_grotesquesemibold";
+        font-size: 22px;
+        margin: 5px 0 13px 0; }
+      html #page-team section.team .frame .sub-member-wrap .sub-member .mail {
+        color: #8b8b8b;
+        text-decoration: underline; }
+        html #page-team section.team .frame .sub-member-wrap .sub-member .mail:hover {
+          color: #39358c; }
+      @media screen and (min-width: 768px) {
+        html #page-team section.team .frame .sub-member-wrap .sub-member {
+          width: 33%; } }
+  @media screen and (min-width: 768px) and (min-width: 1200px) {
+    html #page-team section.team .frame .sub-member-wrap .sub-member {
+      width: auto; } }
+
+    @media screen and (min-width: 768px) {
+      html #page-team section.team .frame .sub-member-wrap {
+        justify-content: center; } }
+  @media screen and (min-width: 768px) and (min-width: 1200px) {
+    html #page-team section.team .frame .sub-member-wrap {
+      justify-content: space-between; } }
+
+html #page-team section.partner {
+  width: 90%;
+  margin: auto;
+  max-width: 1090px;
+  margin-top: 60px; }
+  html #page-team section.partner .frame .seperator {
+    display: block;
+    width: 40px;
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html #page-team section.partner .frame .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+  html #page-team section.partner .frame .sub-title {
+    font-family: "futura_meduim";
+    font-weight: 100;
+    text-align: center; }
+  html #page-team section.partner .frame .sub-partner {
+    text-align: center;
+    margin-top: 30px; }
+    html #page-team section.partner .frame .sub-partner .partner-title {
+      color: #b9945f; }
+      @media screen and (min-width: 768px) {
+        html #page-team section.partner .frame .sub-partner .partner-title {
+          width: 166px;
+          flex: none; } }
+    html #page-team section.partner .frame .sub-partner .logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; }
+      html #page-team section.partner .frame .sub-partner .logo-wrap img {
+        margin: 20px; }
+        @media screen and (min-width: 1200px) {
+          html #page-team section.partner .frame .sub-partner .logo-wrap img {
+            margin: 30px; } }
+      html #page-team section.partner .frame .sub-partner .logo-wrap .long-logo {
+        max-width: 462px; }
+      @media screen and (min-width: 768px) {
+        html #page-team section.partner .frame .sub-partner .logo-wrap {
+          flex: 1;
+          justify-content: flex-start; } }
+    @media screen and (min-width: 768px) {
+      html #page-team section.partner .frame .sub-partner {
+        display: flex;
+        align-items: center;
+        margin-top: 80px; } }
+  @media screen and (min-width: 768px) {
+    html #page-team section.partner .frame .sponsor .partner-title {
+      margin-top: 58px; } }
+  @media screen and (min-width: 768px) {
+    html #page-team section.partner .frame .sponsor {
+      align-items: flex-start; } }
+  @media screen and (min-width: 768px) {
+    html #page-team section.partner {
+      margin-top: 100px; } }
+html #page-team footer {
+  margin-top: 100px; }
+  @media screen and (min-width: 768px) {
+    html #page-team footer {
+      margin-top: 200px; } }
+html #page-sponsor section.title {
+  padding: 40px 0 0 0; }
+  html #page-sponsor section.title h1 {
+    font-family: "galano_grotesquesemibold";
+    color: #90684b;
+    text-align: center;
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html #page-sponsor section.title h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html #page-sponsor section.title h1 {
+      font-size: 48px; } }
+
+  html #page-sponsor section.title .seperator {
+    display: block;
+    width: 40px;
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html #page-sponsor section.title .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+html #page-sponsor section.content {
+  min-height: calc(100vh - 195px); }
+  html #page-sponsor section.content .frame {
+    width: 90%;
+    margin: auto;
+    max-width: 1100px; }
+    html #page-sponsor section.content .frame p {
+      margin-top: 30px;
+      line-height: 1.4em; }
+      html #page-sponsor section.content .frame p a {
+        color: #39358c;
+        text-decoration: underline; }
+        html #page-sponsor section.content .frame p a:hover {
+          color: #2ca88c; }
+    html #page-sponsor section.content .frame .german {
+      margin-top: 80px;
+      position: relative; }
+      html #page-sponsor section.content .frame .german:before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 1px;
+        background-color: #2ca88c;
+        left: 50%;
+        transform: translate(-50%);
+        top: -40px; }
+html #page-sponsor footer {
+  margin-top: 100px; }
+html #page-press section.title {
+  padding: 40px 0 0 0; }
+  html #page-press section.title h1 {
+    font-family: "galano_grotesquesemibold";
+    color: #90684b;
+    text-align: center;
+    font-size: 28px; }
+    @media screen and (min-width: 992px) {
+      html #page-press section.title h1 {
+        font-size: 38px; } }
+  @media screen and (min-width: 992px) and (min-width: 1400px) {
+    html #page-press section.title h1 {
+      font-size: 48px; } }
+
+  html #page-press section.title .seperator {
+    display: block;
+    width: 40px;
+    margin: 20px auto; }
+    @media screen and (min-width: 992px) {
+      html #page-press section.title .seperator {
+        width: 67px;
+        margin: 36px auto; } }
+html #page-press section.content {
+  min-height: calc(100vh - 229px); }
+  html #page-press section.content .frame {
+    width: 90%;
+    margin: auto;
+    max-width: 1100px; }
+    html #page-press section.content .frame .press-kit {
+      font-size: 18px;
+      text-align: center; }
+      html #page-press section.content .frame .press-kit .link-wrap {
+        display: block;
+        margin-top: 10px; }
+        html #page-press section.content .frame .press-kit .link-wrap a, html #page-press section.content .frame .press-kit .link-wrap a:visited {
+          font-family: "galano_grotesquesemibold";
+          color: black;
+          padding: 0 10px; }
+        html #page-press section.content .frame .press-kit .link-wrap a:hover {
+          color: #2ca88c; }
+        @media screen and (min-width: 768px) {
+          html #page-press section.content .frame .press-kit .link-wrap {
+            display: inline-block;
+            margin-left: 30px; } }
+    html #page-press section.content .frame .contact {
+      margin-top: 30px;
+      font-size: 18px;
+      text-align: center; }
+      html #page-press section.content .frame .contact a {
+        color: #2ca88c;
+        text-decoration: underline; }
+        html #page-press section.content .frame .contact a:hover {
+          color: #39358c; }
+  @media screen and (min-width: 992px) {
+    html #page-press section.content {
+      min-height: calc(100vh - 315px); } }
 
 /*# sourceMappingURL=style.css.map */
